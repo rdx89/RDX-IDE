@@ -1,0 +1,21 @@
+[submodule "termux-am"]
+	path = termux-am
+	url = https://github.com/termux/TermuxAm.git
+[submodule "termux-api"]
+	path = termux-api
+	url = https://github.com/rdx89/termux-api.git
+[submodule "termux-x11"]
+	path = termux-x11
+	url = https://github.com/rdx89/termux-x11.git
+[submodule "rdxide-vscode"]
+	path = rdxide-vscode
+	url = https://github.com/rdx89/rdxide_vscode_extension.git
+[submodule "rdxide-chrome-extension"]
+	path = rdxide-chrome-extension
+	url = https://github.com/rdx89/rdxide-browser-extension.git
+[submodule "rdxide_mini_apps"]
+	path = rdxide_mini_apps
+	url = https://github.com/rdx89/rdxide_mini_apps
+[submodule "rdxide_plugins"]
+	path = rdxide_plugins
+	url = https://github.com/rdx89/rdxide_plugins

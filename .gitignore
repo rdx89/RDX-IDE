@@ -1,0 +1,206 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.jks
+*.keystore
+release.jks
+
+# Go Daemon & Bridge Build Outputs
+server/bin/
+server/server
+server/daemon
+server/gemini-server
+agy_ide_bridge/bin/
+agy_ide_bridge/agy_ide_bridge
+agy_ide_bridge/agy_ide_bridge_android
+agy_ide_bridge/server
+agy_ide_bridge/server_android
+agy_ide_bridge/daemon
+agy_ide_bridge/gemini-server
+gemini-server
+*.exe
+*.test
+termux-daemon/daemon
+termux-daemon/server
+app/src/main/assets/bin/agy_ide_bridge
+app/src/main/assets/bin/agy_ide_bridge.xz
+app/src/main/assets/bin/agy_ide_bridge_linux.xz
+termux-am-build/build/
+app/src/main/assets/bin/agy_ide_bridge_linux_amd64
+app/src/main/assets/bin/agy_ide_bridge_linux_arm64
+app/src/main/assets/bin/backup_bootstrap
+app/src/main/assets/bin/backup_chats
+app/src/main/assets/bin/restore_chats
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+Conversation Log
+me is project ko kese advance bnaa skta hu or isme rdx ide name rkhna chata hu pure project ka rdxide htaa kar 
+इस प्रोजेक्ट को और Advance बनाने के कई बेहतरीन तरीके हैं, और इसे "RDX IDE" से "RDX IDE" में रीनेम करने के लिए एक बहुत महत्वपूर्ण तकनीकी नियम को समझना ज़रूरी है।
+
+नीचे दोनों चीज़ों की पूरी डिटेल दी गई है:
+
+भाग 1: इस प्रोजेक्ट को और Advance कैसे बना सकते हैं?
+RDX IDE का आर्किटेक्चर (Kotlin Compose + Go Bridge + Termux Engine + AI CLIs) पहले से ही बहुत शक्तिशाली है। इसे नेक्स्ट-लेवल IDE बनाने के लिए ये फीचर्स जोड़े जा सकते हैं:
+
+LSP (Language Server Protocol) का इंटीग्रेशन (पूर्ण VS Code जैसा अनुभव):
+
+वर्तमान स्थिति: अभी कोड एडिटर में केवल सिंटैक्स हाइलाइटिंग और टेक्स्ट एडिटिंग है।
+एडवांस अपग्रेड: Termux के अंदर चलने वाले LSP सर्वर्स (जैसे Python के लिए pyright, C/C++ के लिए clangd, Go के लिए gopls, JS/TS के लिए typescript-language-server) को एडिटर से जोड़ना। इससे फोन पर ही ऑटो-कम्प्लीशन (IntelliSense), Go-to-Definition, और एरर स्क्विगल्स (red lines) मिलने लगेंगे।
+On-Device 100% Offline AI (NPU/GPU Acceleration):
+
+एडवांस अपग्रेड: फोन के Qualcomm Snapdragon / MediaTek NPU पर चलने वाले llama.cpp (Vulkan/OpenCL) या Ollama को सीधे इंटीग्रेट करना। इससे बिना इंटरनेट के भी लोकल छोटे मॉडल्स (जैसे Qwen2.5-Coder 1.5B/3B या DeepSeek-R1) से फोन पर सीधे फ्री में AI कोड जेनरेशन और ऑटो-कंप्लीट चलेगा।
+Multi-Agent Team Orchestration (स्वायत्त टीम):
+
+एक ऐसा मोड जहाँ एक साथ कई एजेंट्स टीम की तरह काम करें:
+Architect Agent: प्रोजेक्ट की प्लानिंग और फाइल स्ट्रक्चर तय करेगा।
+Coder Agent: कोड लिखेगा।
+Tester Agent: टर्मिनल में टेस्ट रन करेगा और एरर ठीक करवाएगा।
+Reviewer Agent: Git diff देखकर अंतिम अप्रूवल देगा।
+Visual Debugger (DAP - Debug Adapter Protocol):
+
+ब्रेकपॉइंट्स लगाना, स्टेप-ओवर/स्टेप-इन करना, और रन-टाइम वेरिएबल्स को देखने के लिए एक विजुअल डिबगर UI (Python debugpy, Node.js के लिए)।
+Split-Screen & DeX / Tablet Mode:
+
+जब फोन को बड़ी स्क्रीन या Samsung DeX पर कनेक्ट किया जाए, तो थ्री-कॉलम लेआउट (बाएं एडिटर, बीच में टर्मिनल, दाएं AI चैट + लाइव ब्राउज़र) एक साथ दिखे।
+1-Click Container / Proot Distro Manager:
+
+GUI के ज़रिए सीधे Alpine, Arch Linux, Kali Linux या Ubuntu कंटेनर्स को एक टैप में इंस्टॉल/स्विच करने का सपोर्ट।
+भाग 2: "RDX IDE" से "RDX IDE" में नाम बदलना (तकनीकी चेतावनी और प्लान)
+प्रोजेक्ट को रीनेम करने के दो स्तर (Levels) हैं:
+
+स्तर 1: UI और ब्रांडिंग रीनेम (सुरक्षित और तुरंत करने योग्य)
+इसमें ऐप का डिस्प्ले नाम, लोगो और टेक्स्ट बदले जाते हैं, जिससे अंदर का कोई भी लिनक्स बाइनरी या पैकेज खराब नहीं होता:
+
+strings.xml में app_name बदलकर "RDX IDE" करना।
+ऐप के आइकॉन्स (ic_launcher), स्प्लैश स्क्रीन, अबाउट पेज और सेटिंग्स में से "RDX IDE" हटाकर "RDX IDE" करना।
+README.md और UI टाइटल्स को अपडेट करना।
+स्तर 2: डीप कोडबेस और पैकेज रीनेम (ai.rdxide को बदलना)
+अगर आप ऐप का पैकेज आईडी और इंटरनल डायरेक्टरी भी बदलना चाहते हैं, तो एक बहुत बड़ा तकनीकी नियम है जिसे अनदेखा नहीं किया जा सकता:
+
+CAUTION
+
+10-Character Package Name Rule (बाइनरी रीलोकेशन का नियम): Termux के ओरिजिनल लिनक्स पैकेजेस (जैसे python, git, bash, node) हार्डकोडेड पाथ /data/data/com.termux/ के लिए कंपाइल होते हैं। RDX IDE ने पैकेज नाम ai.rdxide इसलिए रखा क्योंकि com.termux (10 अक्षर) और ai.rdxide (10 अक्षर) दोनों की लंबाई बिल्कुल एक समान है! Go ब्रिज (agy_ide_bridge/pkg/relocate) पैकेज इंस्टॉल करते समय बाइनरी के अंदर बाइट-टू-बाइट 1:1 इन-प्लेस रिप्लेसमेंट करता है।
+
+अगर नया पैकेज नाम ठीक 10 अक्षरों का नहीं होगा, तो Termux के सभी कंपाइल टूल्स क्रैश हो जाएंगे!
+
+इसलिए, अगर पैकेज नाम बदलना है, तो वह बिल्कुल 10 कैरेक्टर का होना चाहिए, जैसे:
+
+ai.rdx.ide (कुल 10 अक्षर: a-i-.-r-d-x-.-i-d-e)
+in.rdx.ide (कुल 10 अक्षर)
+co.rdx.ide (कुल 10 अक्षर)
+यदि हम डीप रीनेम करते हैं, तो निम्नलिखित फ़ाइलों को अपडेट करना होगा:
+
+app/src/main/AndroidManifest.xml (पैकेज, एक्टिविटी और रिसीवर नेम्स)
+app/build.gradle.kts (applicationId और namespace)
+termux-am-build/build.gradle.kts (TERMUX_PACKAGE_NAME = "ai.rdx.ide")
+agy_ide_bridge/pkg/relocate/ (Go ब्रिज में रिप्लेसमेंट स्ट्रिंग्स)
+Kotlin सोर्स कोड फोल्डर संरचना (app/src/main/java/ai/rdxide -> ai/rdx/ide)
+आप आगे कैसे बढ़ना चाहते हैं?
+क्या हम पहले UI / डिस्प्ले नाम और ब्रांडिंग को "RDX IDE" में बदलें?
+या आप डीप पैकेज रीनेम (ai.rdxide -> ai.rdx.ide) भी करना चाहते हैं?
+और जो ऊपर एडवांस फीचर्स बताए गए (जैसे LSP, Offline AI, Multi-Agent), उनमें से कौन सा फीचर आप सबसे पहले जोड़ना चाहते हैं?
+आप जैसा निर्देश देंगे, मैं उसी अनुसार प्लान बनाकर आगे की कार्रवाई शुरू करूँगा।
+
+
+ai.rdx.ide karo change deep me 
+ai.rdx.ide नाम चुनना बिल्कुल सटीक निर्णय है, क्योंकि:
+
+com.termux = 10 कैरेक्टर
+ai.rdxide = 10 कैरेक्टर
+ai.rdx.ide = 10 कैरेक्टर (a-i-.-r-d-x-.-i-d-e)
+इससे Termux का 1:1 इन-प्लेस बाइट-स्वैपिंग और बाइनरी रीलोकेशन सिस्टम बिना किसी क्रैश के 100% सही तरीके से काम करेगा।
+
+पूरा डीप रीनेम प्लान (Detailed Breakdown of Changes)
+कोडबेस में कोई भी बदलाव करने से पहले, मैं आपको हर उस हिस्से का विवरण दे रहा हूँ जहाँ बदलाव किए जाएँगे:
+
+1. Gradle बिल्ड कॉन्फ़िगरेशन
+app/build.gradle.kts:
+namespace = "ai.rdx.ide" (पहले ai.rdxide था)
+applicationId = "ai.rdx.ide"
+Debug बिल्ड के लिए variant.applicationId: "ai.rdx.dev" (यह भी ठीक 10 कैरेक्टर का रहेगा)
+termux-am-build/build.gradle.kts:
+TERMUX_PACKAGE_NAME को "ai.rdx.ide" पर सेट करना ताकि Termux का am कमांड सही ऐप से जुड़े।
+2. Android Manifest (app/src/main/AndroidManifest.xml)
+सभी प्रोवाइडर्स के authorities को अपडेट करना (जैसे ai.rdxide.fileprovider 
+→
+→ ai.rdx.ide.fileprovider)।
+कस्टम परमिशन नेम्स को अपडेट करना (जैसे ai.rdxide.permission.RUN_COMMAND 
+→
+→ ai.rdx.ide.permission.RUN_COMMAND)।
+एक्टिविटीज, रिसीवर्स और सर्विसेज के पैकेज पाथ ai.rdxide.* से ai.rdx.ide.* करना।
+3. Kotlin सोर्स कोड फोल्डर और फाइल्स
+फोल्डर डायरेक्टरी मूव करना:
+app/src/main/java/ai/rdxide 
+→
+→ app/src/main/java/ai/rdx/ide
+app/src/test/java/ai/rdxide 
+→
+→ app/src/test/java/ai/rdx/ide
+app/src/androidTest/java/ai/rdxide 
+→
+→ app/src/androidTest/java/ai/rdx/ide
+इम्पोर्ट और पैकेज डिक्लेयरेशन:
+सभी Kotlin फाइल्स में package ai.rdxide... को package ai.rdx.ide... करना।
+सभी import ai.rdxide... को import ai.rdx.ide... में बदलना।
+हार्डकोडेड पाथ्स व स्थिरांक:
+TermuxRelocation.kt में RELEASE_PACKAGE = "ai.rdx.ide" करना।
+बैकग्राउंड पाथ्स (जैसे /data/data/ai.rdxide/files 
+→
+→ /data/data/ai.rdx.ide/files) को अपडेट करना।
+4. शेल स्क्रिप्ट्स और Assets
+scripts/ और app/src/main/assets/bin/ की स्क्रिप्ट्स (जैसे backup_projects.sh, restore_projects.sh, backup_chats.sh, git_clone.sh):
+इनमें मौजूद /data/data/ai.rdxide पाथ्स को /data/data/ai.rdx.ide में बदलना।
+5. Go ब्रिज (agy_ide_bridge)
+agy_ide_bridge/pkg/relocate/relocate_test.go और कमेंट्स में ai.rdxide को ai.rdx.ide से अपडेट करना ताकि टेस्ट और डिफॉल्ट्स मैच हों।
+6. ऐप डिस्प्ले नाम और UI रिसोर्सेज
+app/src/main/res/values/strings.xml:
+<string name="app_name">RDX IDE</string> करना।
+यूज़र-फेसिंग स्ट्रिंग्स में "RDX IDE" की जगह "RDX IDE" करना।
+मैंने अभी तक किसी भी फ़ाइल को मॉडिफाई नहीं किया है।
+
+कृपया इस प्लान को रिव्यू करें। जब आप तैयार हों, तो "continue" या "do it" लिखकर बताएं ताकि मैं इन सभी बदलावों को सुरक्षित तरीके से लागू करना शुरू करूँ।
+
+
+kARO CHANGE
+Update build configurations
+Done
+Update Android manifest
+In progress
+
+
+# Proto Generator Large JSON Schemas
+proto_generator/*.json
+
+# Kotlin Compiler Session & Daemon Cache
+.kotlin/
+
+# IDE & Gemini Metadata
+.gemini/
+/server_android
+/agy_ide_bridge_android
+termux-app/
+/backup_bootstrap
+output/
+.agents/
+flow_mcp/
+finally.zip
+# STEM & diagrams render bundle (built by scripts/render_bundle/build_render_bundle.sh, uploaded to GitHub releases)
+scripts/render_bundle/out/
+scripts/render_bundle/.work/
+# IDE bridge copy of /version.json (copied by the Gradle build and scripts/agy_ide_bridge_builder.sh)
+agy_ide_bridge/pkg/buildinfo/version.json
