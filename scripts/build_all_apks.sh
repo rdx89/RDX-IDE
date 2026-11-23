@@ -24,16 +24,19 @@ for arg in "$@"; do
 done
 # file names: the arm64 build has none of these suffixes (the in-app updater asks for the name of its own build)
 SUFFIX=""
-ARCHIVE="RDX IDE"
+GRADLE_ARCHIVE="rdxIde"
+OUTPUT_NAME="RDX IDE"
 BRIDGE_ARCH="arm64"
 GRADLE_ARGS=(-Pabi="${ABI}")
 if [[ "${ABI}" == "x86_64" ]]; then
     SUFFIX="-x86_64"
-    ARCHIVE="RDX IDE-x86_64"
+    GRADLE_ARCHIVE="rdxIde-x86_64"
+    OUTPUT_NAME="RDX IDE-x86_64"
     BRIDGE_ARCH="amd64"
 elif [[ "${CHROOT}" == "true" ]]; then
     SUFFIX="-chroot"
-    ARCHIVE="RDX IDE-chroot"
+    GRADLE_ARCHIVE="rdxIde-chroot"
+    OUTPUT_NAME="RDX IDE-chroot"
     GRADLE_ARGS+=(-Pchroot=true)
 fi
 
@@ -55,11 +58,11 @@ if [[ "${MODE}" == "release" ]]; then
     echo "🔨 Compiling Release (:app:assembleRelease)..."
     "${ROOT_DIR}/gradlew" -p "${ROOT_DIR}" :app:assembleRelease "${GRADLE_ARGS[@]}"
     # the release asset; the in-app updater downloads releases/download/v<version>/RDX IDE-v<version><suffix>.apk
-    cp "${APKS_SRC}/release/${ARCHIVE}-release.apk" "${OUTPUT_DIR}/RDX IDE-v${VERSION_NAME}${SUFFIX}.apk"
+    cp "${APKS_SRC}/release/${GRADLE_ARCHIVE}-release.apk" "${OUTPUT_DIR}/RDX IDE-v${VERSION_NAME}${SUFFIX}.apk"
 else
     echo "🔨 Compiling Debug (:app:assembleDebug)..."
     "${ROOT_DIR}/gradlew" -p "${ROOT_DIR}" :app:assembleDebug "${GRADLE_ARGS[@]}"
-    cp "${APKS_SRC}/debug/${ARCHIVE}-debug.apk" "${OUTPUT_DIR}/RDX IDE-v${VERSION_NAME}${SUFFIX}-debug.apk"
+    cp "${APKS_SRC}/debug/${GRADLE_ARCHIVE}-debug.apk" "${OUTPUT_DIR}/RDX IDE-v${VERSION_NAME}${SUFFIX}-debug.apk"
 
     # the APK ships the bridge xz-compressed; the uncompressed build is kept under app/build
     if [[ -f "${ROOT_DIR}/app/build/intermediates/agyIdeBridge/agy_ide_bridge" ]]; then
